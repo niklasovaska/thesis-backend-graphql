@@ -5,12 +5,13 @@ import { Album } from "./entity/Album"
 import { Genre } from "./entity/Genre"
 import { AppUser } from "./entity/AppUser"
 import { Review } from "./entity/Review"
+import { Track } from "./entity/Track"
 
 import { DB_CONNECT } from "./utils/config"
 
 export const AppDataSource = new DataSource({
     type: "postgres",
     url: DB_CONNECT,
-    entities: [Album, Artist, Genre, AppUser, Review],
+    entities: [Album, Artist, Genre, AppUser, Review, Track],
     synchronize: true
 })

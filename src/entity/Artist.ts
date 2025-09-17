@@ -13,7 +13,7 @@ export class Artist extends BaseEntity {
     @Column("varchar", { unique: true, length: 255 })
     name!: string
 
-    @Field(() => [Album], { nullable: true })
+    @Field(() => [Album])
     @OneToMany(() => Album, (album) => album.artist)
     albums?: Album[]
 }

@@ -14,7 +14,7 @@ export class AppUser extends BaseEntity {
     @Column("varchar", {unique: true, length: 20})
     name!: string
 
-    @Field(() => [Review], { nullable: true })
+    @Field(() => [Review])
     @OneToMany(() => Review, (review) => review.user)
     reviews?: Review[]
 }

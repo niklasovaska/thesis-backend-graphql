@@ -4,9 +4,6 @@ import { createYoga } from 'graphql-yoga'
 import { createSchema } from './schema'
 import { AppDataSource } from './data-source'
 import { PORT, FRONTEND_ORIGIN } from './utils/config'
-// import { Artist } from './entity/Artist'
-// import { Genre } from './entity/Genre'
-// import { Album } from './entity/Album'
 
 async function main() {
   try {

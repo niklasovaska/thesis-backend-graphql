@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsPositive, IsUUID, MaxLength } from "class-validator";
+import { IsNotEmpty, IsUUID, Min, Max, MaxLength } from "class-validator";
 import { Album } from "../entity/Album";
 import { Review } from '../entity/Review';
 import { AppUser } from '../entity/AppUser'
@@ -14,7 +14,8 @@ class ReviewInput {
 
     @Field(() => Float)
     @IsNotEmpty({ message: "Rating cannot be empty" })
-    @IsPositive( { message: "Please provide a valid rating" })
+    @Min(0.5,  { message: "Please provide a valid rating" })
+    @Max(5, { message: "Please provide a valid rating"  })
     rating: number
 
     @Field(() => ID)

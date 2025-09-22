@@ -3,7 +3,6 @@ import { createServer } from 'node:http'
 import { createYoga } from 'graphql-yoga'
 import { createSchema } from './schema'
 import { AppDataSource } from './data-source'
-import { PORT, FRONTEND_ORIGIN } from './utils/config'
 
 async function main() {
   try {
@@ -17,7 +16,7 @@ async function main() {
     const yoga = createYoga({
       schema,
       cors: {
-        origin: FRONTEND_ORIGIN,
+        origin: '*',
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization'],
         methods: ['GET', 'POST', 'OPTIONS']
@@ -26,8 +25,10 @@ async function main() {
 
     const server = createServer(yoga);
 
+    const PORT = process.env.PORT || 4000
+
     server.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}/graphql`);
+      console.log(`Server is running on http://localhost:${PORT}`);
     });
 
   } catch (error) {

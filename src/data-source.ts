@@ -13,5 +13,5 @@ export const AppDataSource = new DataSource({
     type: "postgres",
     url: DB_CONNECT,
     entities: [Album, Artist, Genre, AppUser, Review, Track],
-    synchronize: true
+    synchronize: false
 })

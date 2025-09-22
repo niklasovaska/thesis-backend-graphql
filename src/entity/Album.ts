@@ -4,6 +4,7 @@ import { Genre } from "./Genre"
 import { Track } from "./Track"
 import { Field, ID, Int, ObjectType } from "type-graphql"
 import { Review } from "./Review"
+import { RatingStats } from "../types/RatingStats"
 import slugify from "slugify"
 
 @ObjectType()
@@ -51,6 +52,9 @@ export class Album extends BaseEntity {
     @Field(() => Date)
     @CreateDateColumn({ name: "created_at", type: "timestamp"})
     createdAt!: Date
+
+    @Field(() => RatingStats)
+    ratingStats!: RatingStats
 
     @BeforeInsert()
     generateSlug() {

@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne, JoinColumn, CreateDateColumn } from "typeorm"
 import { Album } from '../entity/Album'
 import { AppUser } from "../entity/AppUser"
-import { Field, Float, ID, ObjectType } from "type-graphql"
+import { Field, ID, Int, ObjectType } from "type-graphql"
 
 @ObjectType()
 @Entity()
@@ -11,8 +11,8 @@ export class Review extends BaseEntity {
     @PrimaryGeneratedColumn("uuid")
     id!: string
 
-    @Field(() => Float)
-    @Column("float")
+    @Field(() => Int)
+    @Column("int")
     rating!: number
 
     @Field({ nullable: true })

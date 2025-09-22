@@ -47,7 +47,7 @@ class Review {
 
 Artist "1" --> "1..*" Album
 Genre "1" --> "1..*" Album
-Track "1" --> "1..*" Album
+Track "0..*" --> "1" Album
 Album "1" --> "0..*" Review
 AppUser "1" --> "0..*" Review
 ```

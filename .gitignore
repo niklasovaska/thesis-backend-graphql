@@ -4,6 +4,7 @@ node_modules/
 build/
 tmp/
 temp/
+dist/
 
 # Ignore test data scripts
 src/data/

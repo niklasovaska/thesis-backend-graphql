@@ -1,9 +1,9 @@
-import * as dotenv from 'dotenv'
+// import * as dotenv from 'dotenv'
 
-dotenv.config()
-
-
-const DB_CONNECT = process.env.DB_CONNECT
+// dotenv.config()
 
 
-export { DB_CONNECT }
+// const DB_CONNECT = process.env.DB_CONNECT
+
+
+// export { DB_CONNECT }

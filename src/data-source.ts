@@ -7,11 +7,11 @@ import { AppUser } from "./entity/AppUser"
 import { Review } from "./entity/Review"
 import { Track } from "./entity/Track"
 
-import { DB_CONNECT } from "./utils/config"
 
 export const AppDataSource = new DataSource({
     type: "postgres",
-    url: DB_CONNECT,
+    url: process.env.DATABASE_URL,
     entities: [Album, Artist, Genre, AppUser, Review, Track],
+    ssl:  { rejectUnauthorized: false },  
     synchronize: false
 })

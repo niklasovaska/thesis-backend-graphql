@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsUUID, Min, Max, MaxLength } from "class-validator";
 import { Album } from "../entity/Album";
 import { Review } from '../entity/Review';
-import { AppUser } from '../entity/AppUser'
+import { AppUser } from '../entity/AppUser';
 import { Arg, Field, Float, ID, InputType, Mutation, Query, Resolver } from "type-graphql";
 import { GraphQLError } from "graphql";
 
@@ -30,10 +30,10 @@ class ReviewInput {
 
 }
 
-@Resolver()
+@Resolver(() => Review)
 export class ReviewResolver {
     @Query(() => [Review])
-    reviews() {
+    getReviews() {
         return Review.find({
             relations: ["album", "user"]
         })

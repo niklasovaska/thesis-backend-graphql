@@ -13,5 +13,5 @@ export const AppDataSource = new DataSource({
     url: process.env.DATABASE_URL,
     entities: [Album, Artist, Genre, AppUser, Review, Track],
     ssl:  { rejectUnauthorized: false },  
-    synchronize: false
+    synchronize: true,
 })
